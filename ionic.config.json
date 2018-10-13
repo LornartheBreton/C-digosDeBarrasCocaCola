@@ -1,0 +1,7 @@
+{
+  "name": "cocacola",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

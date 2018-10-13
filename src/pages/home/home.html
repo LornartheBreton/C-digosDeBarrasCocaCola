@@ -1,0 +1,26 @@
+<ion-header color="secondary">
+  <ion-navbar color ="danger">
+    <ion-title >
+      Scanner códigos de barra
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+
+    <ion-card-header>
+      Datos del código
+    </ion-card-header>
+
+    <ion-card-content>
+      {{scanOutput}}
+    </ion-card-content>
+
+  </ion-card>
+
+  <button ion-button color="secondary" (click)="scanBarcode()">
+    Escanear código
+  </button>
+</ion-content>
