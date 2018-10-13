@@ -14,12 +14,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'manual.html',
 })
 export class ManualPage {
-
+  marca:string;
+  modelo:string;
+  equipo:string;
+  departamento:string;
+  resultante: string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManualPage');
+  }
+
+  inputData(){
+    this.resultante="AC.MX"+this.marca.charCodeAt(0)-97+this.marca.charCodeAt(1)-97
+    +this.modelo+this.equipo+this.departamento+Math.floor((Math.random() * 100)).toString();
   }
 
 }

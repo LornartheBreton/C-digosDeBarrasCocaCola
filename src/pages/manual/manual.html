@@ -6,13 +6,93 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color= "danger">
     <ion-title>Ingreso manual</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+
+
+  <ion-item>
+    <ion-label floating>Marca</ion-label>
+    <ion-input type="text" [(ngModel)]="marca"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Modelo</ion-label>
+    <ion-input type="text" [(ngModel)]="modelo"></ion-input>
+  </ion-item>
+
+  <ion-list radio-group [(ngModel)]="equipo">
+    <ion-list-header>
+      Tipo de equipo
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Computadora</ion-label>
+      <ion-radio value="00"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Impresora</ion-label>
+      <ion-radio value="01"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Teléfono</ion-label>
+      <ion-radio value="02"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Especializado</ion-label>
+      <ion-radio value="03"></ion-radio>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list radio-group [(ngModel)]="departamento">
+    <ion-list-header>
+      Departamento
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Producción</ion-label>
+      <ion-radio value="00"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Capital humano</ion-label>
+      <ion-radio value="01"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Logística</ion-label>
+      <ion-radio value="02"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tecnologías de información</ion-label>
+      <ion-radio value="03"></ion-radio>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button color="secondary" (click)="inputData()">
+    Agregar equipo
+  </button>
+
+  <ion-card>
+
+    <ion-card-header>
+      Código
+    </ion-card-header>
+
+    <ion-card-content>
+      {{resultante}}
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>
