@@ -8,6 +8,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 })
 export class HomePage {
   scanOutput: string;
+  marca:string;
+  determiner=0;
   constructor(public navCtrl: NavController,
   private barcodeScanner: BarcodeScanner,
   private iab: InAppBrowser) {
@@ -15,14 +17,29 @@ export class HomePage {
   }
 
   scanBarcode(){
-    //this.scanOutput="f112jl2";
-    this.barcodeScanner.scan().then(data => {
+    this.scanOutput="mxl310186c";
+    /*this.barcodeScanner.scan().then(data => {
 
-       this.scanOutput = data.text
+       this.scanOutput = data.text.toLowerCase();
 
-     });
-     const browser = this.iab.create('https://www.dell.com/support/home/mx/es/mxbsdt1/product-support/servicetag/'+ this.scanOutput);
+     });*/
 
+
+     if(this.marca=="dell"){
+       const browser =
+       this.iab.create('https://www.dell.com/support/home/mx/es/mxbsdt1/product-support/servicetag/'
+       + this.scanOutput);
+       this.determiner=1;
+     }
+     if(this.marca=="hp"){
+       const browser =
+       this.iab.create('https://support.hp.com/mx-es/search?q='
+       + this.scanOutput+'&filter=-1');
+       this.determiner=1;
+     }
+     if(this.marca=="hp"){
+       this.determiner=0;
+     }
 
   }
 

@@ -19,9 +19,21 @@
     </ion-card-content>
 
   </ion-card>
+  <ion-list>
+  <ion-item>
+    <ion-label>Marca</ion-label>
+    <ion-select [(ngModel)]="marca">
+      <ion-option value="dell">Dell</ion-option>
+      <ion-option value="hp">HP</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
 
   <button ion-button color="secondary" (click)="scanBarcode()">
     Escanear código
+  </button>
+  <button ion-button color="danger" (click)="scanBarcode()">
+    Lenovo (entrada manual)
   </button>
 
 
