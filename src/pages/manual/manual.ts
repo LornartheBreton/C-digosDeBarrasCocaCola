@@ -27,7 +27,7 @@ export class ManualPage {
   }
 
   inputData(){
-    this.resultante="AC.MX"+this.marca.charCodeAt(0)-97+this.marca.charCodeAt(1)-97
+    this.resultante="AC.MX"+this.marca.charCodeAt(0)+this.marca.charCodeAt(1)
     +this.modelo+this.equipo+this.departamento+Math.floor((Math.random() * 100)).toString();
   }
 
