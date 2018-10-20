@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { LenovoPage } from '../lenovo/lenovo';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -10,10 +11,15 @@ export class HomePage {
   scanOutput: string;
   marca:string;
   determiner=0;
+  lenovo=LenovoPage;
   constructor(public navCtrl: NavController,
   private barcodeScanner: BarcodeScanner,
   private iab: InAppBrowser) {
 
+  }
+
+  switchPage(){
+    this.navCtrl.push(this.lenovo);
   }
 
   scanBarcode(){
