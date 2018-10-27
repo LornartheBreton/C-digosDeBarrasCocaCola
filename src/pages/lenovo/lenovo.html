@@ -14,19 +14,65 @@
 
 
 <ion-content padding>
-  <img src="../assets/imgs/lenovo.gif">
+  <img src="../assets/imgs/lenovo.jpg">
 
   <ion-list>
 
   <ion-item>
-    <ion-label floating >Product number</ion-label>
-    <ion-input type="text" [(ngModel)]="PN"></ion-input>
+    <ion-label floating >Modelo del producto</ion-label>
+    <ion-input type="text" [(ngModel)]="model"></ion-input>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label floating>Procesador</ion-label>
+    <ion-input type="text" [(ngModel)]="CPU"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating >Serial number</ion-label>
-    <ion-input type="text" [(ngModel)]="SN"></ion-input>
+    <ion-label floating>Tarjeta Gráfica (si aplica)</ion-label>
+    <ion-input type="text" [(ngModel)]="GPU"></ion-input>
   </ion-item>
 
+  <ion-item>
+    <ion-label floating>Capacidad de almacenamiento</ion-label>
+    <ion-input type="text" [(ngModel)]="storage"></ion-input>
+  </ion-item>
 </ion-list>
+<ion-list>
+  <ion-item>
+    <ion-label>Memoria RAM</ion-label>
+    <ion-select type="number" [(ngModel)]="ram">
+      <ion-option value="1">1 GB</ion-option>
+      <ion-option value="2">2 GB</ion-option>
+      <ion-option value="3">3 GB</ion-option>
+      <ion-option value="4">4 GB</ion-option>
+      <ion-option value="6">6 GB</ion-option>
+      <ion-option value="8">8 GB</ion-option>
+      <ion-option value="12">12 GB</ion-option>
+      <ion-option value="16">16 GB</ion-option>
+      <ion-option value="32">32 GB</ion-option>
+      <ion-option value="64">64 GB</ion-option>
+      <ion-option value="128">128 GB</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+<ion-list>
+  <ion-item>
+    <ion-label>Sistema Operativo</ion-label>
+    <ion-select [(ngModel)]="os">
+      <ion-option value="Mac">MacOS</ion-option>
+      <ion-option value="XP">Windows XP o anterior</ion-option>
+      <ion-option value="Vista">Windows Vista</ion-option>
+      <ion-option value="7">Windows 7</ion-option>
+      <ion-option value="8">Windows 8</ion-option>
+      <ion-option value="10">Windows 10</ion-option>
+      <ion-option value="Linux">Distribución Linux</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+<button ion-button color="secondary" (click)="switchPage()">
+  Ingresar
+</button>
 </ion-content>
