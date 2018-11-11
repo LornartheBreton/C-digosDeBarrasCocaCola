@@ -7,12 +7,16 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LenovoPage } from '../pages/lenovo/lenovo';
+import { SystemsPage } from '../pages/systems/systems';
+import { SpecsPage } from '../pages/specs/specs';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LenovoPage
+    LenovoPage,
+    SystemsPage,
+    SpecsPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   entryComponents: [
     MyApp,
     HomePage,
-    LenovoPage
+    LenovoPage,
+    SystemsPage,
+    SpecsPage
   ],
   providers: [
     StatusBar,

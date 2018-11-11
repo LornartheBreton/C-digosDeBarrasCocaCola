@@ -19,14 +19,37 @@
   <ion-list>
 
   <ion-item>
-    <ion-label floating >Product number</ion-label>
-    <ion-input type="text" [(ngModel)]="PN"></ion-input>
+    <ion-label floating >Nombre del producto</ion-label>
+    <ion-input type="text" [(ngModel)]="computadora.PN"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating >Serial number</ion-label>
-    <ion-input type="text" [(ngModel)]="SN"></ion-input>
+    <ion-label floating >Número serial</ion-label>
+    <ion-input type="text" [(ngModel)]="computadora.SN"></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-label floating >RAM</ion-label>
+    <ion-input type="text" [(ngModel)]="computadora.RAM"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating >Procesador</ion-label>
+    <ion-input type="text" [(ngModel)]="computadora.CPU"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Departamento</ion-label>
+    <ion-select [(ngModel)]="computadora.DEP">
+      <ion-option value="TI">Tecnologias de la Información</ion-option>
+      <ion-option value="CH">Capital Humano</ion-option>
+      <ion-option value="PROD">Produccion</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <button ion-button (click)="givePage()">
+    Registrar dispositivo
+  </button>
 
 </ion-list>
 </ion-content>

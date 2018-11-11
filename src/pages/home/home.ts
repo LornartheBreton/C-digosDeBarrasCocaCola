@@ -23,14 +23,15 @@ export class HomePage {
   }
 
   scanBarcode(){
-    this.scanOutput="mxl310186c";
-    /*this.barcodeScanner.scan().then(data => {
+    //this.scanOutput="mxl310186c";
+    this.barcodeScanner.scan().then(data => {
 
        this.scanOutput = data.text.toLowerCase();
 
-     });*/
-
-
+     });
+     
+  }
+     lookup(){
      if(this.marca=="dell"){
        const browser =
        this.iab.create('https://www.dell.com/support/home/mx/es/mxbsdt1/product-support/servicetag/'
