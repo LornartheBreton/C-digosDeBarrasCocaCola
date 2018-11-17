@@ -23,7 +23,8 @@ export class SystemsPage {
     PN:"",
     SN:"",
     URL:"",
-    DEP: ""
+    DEP: "",
+    MAR: ""
   };
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     //console.log(this.navParams.get('computadora').CPU);
@@ -33,6 +34,7 @@ export class SystemsPage {
     this.temp.SN=this.navParams.get('SN');
     this.temp.URL=this.navParams.get('URL');
     this.temp.DEP=this.navParams.get('DEP');
+    this.temp.MAR=this.navParams.get('MAR');
     this.systems.push(this.temp);
   }
 

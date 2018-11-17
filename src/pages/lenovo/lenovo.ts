@@ -20,7 +20,8 @@ export class LenovoPage {
     RAM: "",
     CPU:"",
     URL:"",
-    DEP: " "
+    DEP: " ",
+    MAR: "Lenovo"
   };
   systems=SystemsPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {

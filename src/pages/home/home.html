@@ -22,9 +22,18 @@
   <ion-list>
   <ion-item>
     <ion-label>Marca</ion-label>
-    <ion-select [(ngModel)]="marca">
-      <ion-option value="dell">Dell</ion-option>
-      <ion-option value="hp">HP</ion-option>
+    <ion-select [(ngModel)]="computadora.MAR">
+      <ion-option value="Dell">Dell</ion-option>
+      <ion-option value="HP">HP</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Departamento</ion-label>
+    <ion-select [(ngModel)]="computadora.DEP">
+      <ion-option value="Tecnologias de la Información">Tecnologias de la Información</ion-option>
+      <ion-option value="Capital Humano">Capital Humano</ion-option>
+      <ion-option value="Almacén">Almacén</ion-option>
     </ion-select>
   </ion-item>
 </ion-list>
@@ -39,6 +48,10 @@
 
   <button ion-button color="danger" (click)="switchPage()">
     Lenovo (entrada manual)
+  </button>
+
+  <button ion-button color="secondary" (click)="registerDevice()">
+    Registrar dispositivo
   </button>
 
 
