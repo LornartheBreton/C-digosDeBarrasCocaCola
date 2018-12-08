@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Storage } from "@ionic/storage";
 /**
  * Generated class for the LenovoPage page.
  *
@@ -14,6 +14,8 @@ import { SystemsPage } from '../systems/systems';
   templateUrl: 'lenovo.html',
 })
 export class LenovoPage {
+  systems=SystemsPage;
+  items=[];
   computadora={
     PN: "",
     SN: "",
@@ -23,8 +25,9 @@ export class LenovoPage {
     DEP: " ",
     MAR: "Lenovo"
   };
-  systems=SystemsPage;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  //systems=SystemsPage;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+    this.items=this.navParams.get("items");
   }
 
   ionViewDidLoad() {
@@ -32,7 +35,9 @@ export class LenovoPage {
   }
   givePage(){
     console.log(this.computadora.CPU);
-    this.navCtrl.push(this.systems, this.computadora);
+    this.items.push(this.computadora);
+    this.storage.set('systems', JSON.stringify(this.items));
+    this.navCtrl.push(this.systems,{value:1});
   }
 
 }

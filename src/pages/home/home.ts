@@ -38,7 +38,7 @@ export class HomePage {
   }
 
   switchPage(){
-    this.navCtrl.push(this.lenovo);
+    this.navCtrl.push(this.lenovo, {items: this.items});
   }
 
   scanBarcode(){
