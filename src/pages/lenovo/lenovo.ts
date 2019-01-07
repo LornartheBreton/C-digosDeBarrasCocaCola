@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from "@ionic/storage";
-/**
- * Generated class for the LenovoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+/*
+  Ésta página permite definir manualmente los atributos que normalmente daría el link 
+  ya que Lenovo no tiene página de soporte equivalente a la de HP o la de Dell.
  */
 import { SystemsPage } from '../systems/systems';
 @IonicPage()
