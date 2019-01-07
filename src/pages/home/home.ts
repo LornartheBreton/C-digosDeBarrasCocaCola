@@ -1,3 +1,10 @@
+/*
+Éste archivo define el comportamiento de la página de home.
+Utiliza los módulos nativos de ionic de InAppBrowser y Storage
+para abrir las páginas de las especificaciones de los quipos y 
+para guardar los datos de los mismos respectivamente.
+*/
+
 import { Component } from '@angular/core';
 import { NavController, AlertController, NavParams } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
@@ -17,7 +24,7 @@ export class HomePage {
   determiner=0;
   lenovo=LenovoPage;
   systems=SystemsPage;
-  items=[];
+  items=[]; //Éste es el arreglo con todos los equipos de cómputo.
   computadora={
     PN: "",
     SN: "",
@@ -26,7 +33,7 @@ export class HomePage {
     URL:"",
     DEP: " ",
     MAR: ""
-  };
+  }; //Éste es el diccionario de los diferentes equipos de cómputo: todos los elementos del arreglo "items" siguen ésta estructura.
   constructor(public navCtrl: NavController,
   private barcodeScanner: BarcodeScanner,
   private iab: InAppBrowser,
@@ -34,23 +41,27 @@ export class HomePage {
   public tasksService: TasksServiceProvider, 
   public navParams: NavParams,
   public storage: Storage) {
-    this.items=this.navParams.get("items");
+    this.items=this.navParams.get("items");// Al ingresar a la pagina, el "items" local se iguala con el recibido.
   }
 
   switchPage(){
-    this.navCtrl.push(this.lenovo, {items: this.items});
+    this.navCtrl.push(this.lenovo, {items: this.items});//La funcion cambia la pagina y le manda el arreglo de items en un diccionario.
   }
 
   scanBarcode(){
     //this.scanOutput="mxl310186c";
     this.barcodeScanner.scan().then(data => {
 
-       this.scanOutput = data.text.toLowerCase();
+       this.scanOutput = data.text.toLowerCase();//Escanea el código y guarda el texto resultante.
 
      });
      
   }
   lookup(){
+    /*
+      Ésta función es para verificar que el código escaneado si dirija a una
+      página válida en el sitio web del fabricante.
+    */
     if(this.scanOutput==""||this.scanOutput==null
     || this.computadora.MAR==""||this.computadora.MAR==null){
       let alert= this.alertCtrl.create({
@@ -76,6 +87,10 @@ export class HomePage {
 
   }
   registerDevice(){
+    /*
+      Ésta función confirma el guardado de los datos en el arreglo "items", 
+      convierte el arreglo a un archivo JSON y regresa a la página de systems.
+    */
     if(this.scanOutput==""|| this.scanOutput==null||
     this.computadora.MAR==""||this.computadora.DEP==""
     ||this.computadora.MAR==null|| this.computadora.DEP==null){
