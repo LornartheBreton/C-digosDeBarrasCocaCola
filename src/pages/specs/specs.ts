@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the SpecsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
+/*
+  Éste archivo solo tiene unas variables locales que iguala en el constructor
+  a los elementos del diccionario recibido.
  */
 
 @IonicPage()
